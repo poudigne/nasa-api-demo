@@ -22,8 +22,8 @@ const Patents = (props) => {
             const lists = data.results.map((i) => {
                 return (<div>
                     <p>Patent Number : {i[1]}</p>
-                    <p dangerouslySetInnerHTML={{ __html: `html: ${i[2]}` }}></p>
-                    <p>Description : {i[3]}</p>
+                    <p dangerouslySetInnerHTML={{ __html: `Title: ${i[2]}` }}></p>
+                    <p dangerouslySetInnerHTML={{ __html: `Description: ${i[3]}` }}></p>
                     <p><a target='_blank' rel="noreferrer" href={`${i[10]}`}>See Picture</a></p>
                     <hr />
                 </div>)
