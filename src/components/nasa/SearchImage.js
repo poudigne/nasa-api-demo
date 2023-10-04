@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom'
 const SearchImage = (props) => {
-    const apikey = "0gJkIo5vk3djhMQdgdS1fanNc3Agn4H6wCwbTfk5";
-
     const [data, setData] = useState(null);
     const { kw } = useParams();
     useMemo(() => {
@@ -16,11 +14,11 @@ const SearchImage = (props) => {
         const items = data.collection.items.slice(0, 5) || [];
         if (items.length) {
 
-            const lists= items.map((i, index) => {
+            const lists = items.map((i, index) => {
                 if (i.links?.length){
-                    return (<img src={`${i.links[0].href}`} />)
+                    return (<img alt={`${i.data[0].title}`} src={`${i.links[0].href}`} />)
                 }
-                
+                return (<></>);
             });
             return <>{lists}</>
         }

@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
+// eslint-disable-next-line
 import patents from './patents.css'
 import { useParams } from 'react-router-dom'
 
@@ -14,7 +15,7 @@ const Patents = (props) => {
             .then(response => response.json())
             .then(json => setData(json))
             .catch(error => console.error(error));
-    }, []);
+    }, [patent]);
 
     if (data) {
         if (data.results.length) {
@@ -23,7 +24,7 @@ const Patents = (props) => {
                     <p>Patent Number : {i[1]}</p>
                     <p dangerouslySetInnerHTML={{ __html: `html: ${i[2]}` }}></p>
                     <p>Description : {i[3]}</p>
-                    <p><a target='_blank' href={`${i[10]}`}>See Picture</a></p>
+                    <p><a target='_blank' rel="noreferrer" href={`${i[10]}`}>See Picture</a></p>
                     <hr />
                 </div>)
 

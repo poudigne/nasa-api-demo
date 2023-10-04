@@ -1,4 +1,3 @@
-import ImageOfTheDay from "./nasa/ImageOfTheDay";
 import Sidebar from './Sidebar'
 import React from 'react';
 

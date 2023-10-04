@@ -14,7 +14,7 @@ const ImageOfTheDay = (props) => {
 
     if (data) {
         return (<div>
-            <img src={data.url} />
+            <img alt={`${data.title}`} src={data.url} />
             <p>Picture by : {data.copyright}</p>
             <p>Title : {data.title}</p>
             <p>Description: {data.explanation}</p>
