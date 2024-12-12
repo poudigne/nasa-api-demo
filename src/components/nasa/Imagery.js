@@ -12,7 +12,7 @@ const Imagery = (props) => {
     // call the API on render if dependencies has changed 
     useEffect(() => {
         if (lon && lat) {
-            fetch(`https://api.nasa.gov/planetary/earth/imagery?lon=${lontitude}&lat=${latitude}&dim=0.25&api_key=${apikey}`)
+            fetch(`https://api.nasa.gov/planetary/earth/imagery?lon=${lontitude}&lat=${latitude}&dim=0.15&api_key=${apikey}`)
             .then(response => response.blob())
             .then(blob => setData(blob))
             .catch(error => console.error(error));
