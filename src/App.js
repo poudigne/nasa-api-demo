@@ -9,6 +9,7 @@ import ImageOfTheDay from './components/nasa/ImageOfTheDay';
 import MarsWeather from './components/nasa/MarsWeather';
 import SearchImage from './components/nasa/SearchImage';
 import Patents from './components/nasa/Patents';
+import Imagery from './components/nasa/Imagery';
 
 function App() {
 
@@ -28,6 +29,10 @@ function App() {
     {
       path: "/patents/:patent",
       element: <MainComponent ><Patents /></MainComponent>,
+    },
+    {
+      path: "/imagery/:lon/:lat",
+      element: <MainComponent ><Imagery /></MainComponent>,
     },
   ]);
 
