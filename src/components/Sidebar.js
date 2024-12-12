@@ -46,7 +46,7 @@ export default function Root() {
                             <a href={`/patents/engine`}>Engine Patents</a>
                         </li>
                         <li>
-                            <a href={`/imagery/100.75/1.5`}>Imagery</a>
+                            <a href={`/imagery/-73.58/45.44`}>Imagery</a>
                         </li>
                     </ul>
                 </nav>

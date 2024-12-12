@@ -5,8 +5,8 @@ const Imagery = (props) => {
     const [data, setData] = useState(null); 
     const { lon,lat } = useParams();
 
-    const [lontitude, setLontitude] = useState(lon); // 100.75
-    const [latitude, setLatatitude] = useState(lat); // 1.5
+    const [lontitude, setLontitude] = useState(lon); // -73.58
+    const [latitude, setLatatitude] = useState(lat); // 45.44
 
 
     // call the API on render if dependencies has changed 
