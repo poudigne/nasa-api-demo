@@ -13,14 +13,16 @@ const Imagery = (props) => {
     useEffect(() => {
         if (lon && lat) {
             fetch(`https://api.nasa.gov/planetary/earth/imagery?lon=${lontitude}&lat=${latitude}&dim=0.15&api_key=${apikey}`)
-            .then(response => response.blob())
+            .then(response => response.status != 404 ? response.blob() : new Blob())
             .then(blob => setData(blob))
             .catch(error => console.error(error));
         }
     }, [lon, lat]);
     
     if (data){ // when we have the API data
-       return (<img src={URL.createObjectURL(data)} />) // convert the binary to image.
+       return data.size > 0 // if the blob has a size
+        ? (<img src={URL.createObjectURL(data)} />) // convert the binary to image.
+        : (<div>No image found for those coordinates</div>)  // otherwise display the no image message
     }
     // otherwise display a message we're waiting for the API
     else{ 
